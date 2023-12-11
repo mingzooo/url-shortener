@@ -16,7 +16,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     })
   }
 
-  const { url }: RequestData = req.body;
+  const { url }: RequestData = JSON.parse(req.body);
   const host = req.headers.host;
   const { shortCode, shortUrl } = generateShortUrl(host!);
 
