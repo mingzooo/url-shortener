@@ -28,31 +28,30 @@ const CopyBoard = ({ code }: CopyBoardProps) => {
         <input
           type='text'
           className='border border-solid p-4 rounded-1-1g w-full'
-          value={`${process.env.NEXT_PUBLIC_API_URL}/api/${code}`}
+          value={`${process.env.NEXT_PUBLIC_API_URL}/${code}`}
           ref={inputRef}
           readOnly
         />
-        <div>
+        <div className='flex flex-col justify-center relative'>
           <input
             type='submit'
             className=''
-            value={'copy url'}
+            value={'URL 복사'}
           />
           {isCopy && (
-            <div className='absolute top-16 left-2 bg-black text-white p-2 rounded-1g text-sm'>
-              URL copied
+            <div className='absolute top-16 bg-black text-white p-2 rounded-1g text-sm'>
+              URL 복사완료
             </div>
           )}
         </div>
       </form>
-      <div>
+      <div className='flex flex-row'>
         <span>
           see how many time your link got clicked!
         </span>
         <Link
           href={`/analytic?code=${code}`}
           className='text-blue-300'
-          target='_blank'
         >
           click Here!
         </Link>

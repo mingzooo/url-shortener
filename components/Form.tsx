@@ -25,7 +25,6 @@ const Form = () => {
         setError(error.message);
       }
     }
-
   }
 
   async function createUrl(url: string) {

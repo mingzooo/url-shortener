@@ -17,8 +17,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   const { url }: RequestData = JSON.parse(req.body);
-  const host = req.headers.host;
-  const { shortCode, shortUrl } = generateShortUrl(host!);
 
   //유효하지 않은 url
   if (!isWebUri(url)) {
@@ -40,6 +38,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     });
 
     if (originalUrl) return originalUrl;
+
+    const host = req.headers.host;
+    const { shortCode, shortUrl } = generateShortUrl(host!);
 
     //새로운 url일 경우
     const newUrl = await tx.url.create({

@@ -11,13 +11,13 @@ datasource db {
 }
 
 model Url {
-  id          String        @id @default(uuid())
+  id          String       @id @default(uuid())
   originalUrl String
   shortUrl    String
-  urlCode     String        @unique
-  createdAt   DateTime      @default(now())
-  updatedAt   DateTime      @updatedAt
-  UrlAnalytic UrlAnalytic[]
+  urlCode     String       @unique
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  UrlAnalytic UrlAnalytic?
 }
 
 model UrlAnalytic {

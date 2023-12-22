@@ -8,9 +8,10 @@ type AnalyticPageProps = {
 };
 
 async function getAnalytic(code: string) {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/anlytic/${code}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/analytic/${code}`, {
     method: "GET",
   });
+  // console.log(res)
   if (!res.ok) {
     throw new Error("failed to fetch data")
   }

@@ -8,7 +8,7 @@ export default async function handler(
 ) {
   const { method } = req;
   
-  if (method !== "GET") {
+  if (method !== "GET") { 
     return res.status(400).json({
       message: "only GET request are allowed"
     });

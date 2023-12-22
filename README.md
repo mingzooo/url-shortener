@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## 단 하나의 실수도 용납하지 않겠다
 
-## Getting Started
+1. [구현해야 하는 기능](#구현해야-하는-기능)
+2. [제출 전 검토할 것](#기능-구현-후-검토할-것)
 
-First, run the development server:
+### 과제 요구사항
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [ ] URL 입력폼 제공
+- [ ] 단축 후 결과출력
+- [ ] 동일한 URL을 입력할 경우 항상 동일한 shortening 결과 값이 나와야 함
+- [ ] shortening 의 결과 값은 8문자 이내로 생성
+- [ ] 브라우저에서 shortening URL을 입력하면 원래 URL로 리다이렉트
+- [ ] 도메인은 localhost 로 처리 : 보유한 도메인이 있으면 사용해도 무관
+- [ ] UI 또는 성능 개선 (option)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 구현해야 하는 기능
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- [ ] original url 입력받기
+- [ ] 입력되었던 url이면 이미 있는 거 반환
+- [ ] 잘못된 url 입력 시에 오류 문구 띄우기
+- [ ] 짧은 url 반환 (8문자 이내)
+- [ ] 해당 url 복사
+- [ ] 복사했을 시에 안내 문구 띄우기
+- [ ] url 클릭 시, 리다이렉션
+- [ ] url 클릭 횟수 출력
+- [ ] url 클릭 시, 횟수 갱신
+- [ ] 일정 기간 지나면 데이터 삭제 (데이터 용량 고려)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### DB 구현 (백)
 
-## Learn More
+### 필요한 API (백)
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### 기능 구현 후, 검토할 것
