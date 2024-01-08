@@ -1,33 +1,30 @@
-## 단 하나의 실수도 용납하지 않겠다
+## URL shortener 프로젝트 소개
 
-1. [구현해야 하는 기능](#구현해야-하는-기능)
-2. [제출 전 검토할 것](#기능-구현-후-검토할-것)
+biy.ly(비틀리)처럼 긴 url을 입력하면 짧은 url을 반환해주는 URL 단축기
 
-### 과제 요구사항
+- URL 입력폼 제공
+- 단축 후 결과출력
+- 동일한 URL을 입력 할 경우 항상 동일한 shortening 결과 값이 나와야 함
+- shortening 의 결과 값은 8문자 이내로 생성
+- 브라우저에서 shortening URL을 입력하면 원래 URL로 리다이렉트
+- 도메인은 localhost 로 처리
 
-- [ ] URL 입력폼 제공
-- [ ] 단축 후 결과출력
-- [ ] 동일한 URL을 입력할 경우 항상 동일한 shortening 결과 값이 나와야 함
-- [ ] shortening 의 결과 값은 8문자 이내로 생성
-- [ ] 브라우저에서 shortening URL을 입력하면 원래 URL로 리다이렉트
-- [ ] 도메인은 localhost 로 처리 : 보유한 도메인이 있으면 사용해도 무관
-- [ ] UI 또는 성능 개선 (option)
+https://github.com/sgdevcamp2023/sgwannabe/assets/62490238/8514cad1-837f-4915-a9cc-1fb6f49ab74c
 
-### 구현해야 하는 기능
+### 기술
 
-- [ ] original url 입력받기
-- [ ] 입력되었던 url이면 이미 있는 거 반환
-- [ ] 잘못된 url 입력 시에 오류 문구 띄우기
-- [ ] 짧은 url 반환 (8문자 이내)
-- [ ] 해당 url 복사
-- [ ] 복사했을 시에 안내 문구 띄우기
-- [ ] url 클릭 시, 리다이렉션
-- [ ] url 클릭 횟수 출력
-- [ ] url 클릭 시, 횟수 갱신
-- [ ] 일정 기간 지나면 데이터 삭제 (데이터 용량 고려)
+- Next.js
+- Prisma
+- MySQL
+- tailwind CSS
 
-### DB 구현 (백)
+### 설계
 
-### 필요한 API (백)
+![image](https://github.com/sgdevcamp2023/sgwannabe/assets/62490238/4b75bd65-3694-4836-a5cd-b849c6e3c550)
 
-### 기능 구현 후, 검토할 것
+### 데이터 저장
+
+Input으로 부터 제출된 원본 URL이 DB에 존재하는 지 비교해 검증한다.  
+원본 URL이 DB에 속하지 않았다면 URL shortener를 통해 단축URL을 생성하고 DB에 저장합니다. 만약 중복된 URL이라면 이미 변환된 URL을 반환
+
+![image](https://github.com/sgdevcamp2023/sgwannabe/assets/62490238/3b3f3180-3b1d-46da-b4a8-1fffaace6b2b)
